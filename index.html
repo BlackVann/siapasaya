@@ -1,0 +1,90 @@
+<!--TINGGAL COPY DI GITHUB COKK GAK USAH DI INSPECT!!!!-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="siapasaya.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAPA SAYA?</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row row1">
+
+            <h1>SIAPA SAYA</h1>
+            <div class="parent">
+                <div class="form">
+                    <div v-cloak>
+                    <div class="row form1 d-flex justify-content-between">
+                        <div class="input-container ic1 col-6 col-sm-6 col-lg-4 col-xl-4">
+                            <input aria-describedby="firstname" class="input form-control" type="text" v-model="name" placeholder="Name" pattern="[A-Za-z\s]+" maxlength="25" required/>
+                        </div>
+                         <div @click="special" class="share col-6 col-sm-6 col-lg-4 col-xl-4">
+                            <p>SHARE</p>
+                         </div>
+                         <div @click="special" class="special col-12 col-sm-12 col-lg-4 col-xl-4">
+                            <p>SPECIAL</p>
+                         </div>
+                    <div class="col-12 col-sm-12 col-lg-12 col-xl-12"> 
+                        <button @click="getdata" class="submit btn btn-primary" id="firstname">Submit</button>
+                    </div>
+                       
+                    </div>
+<div class="row">
+    <div class="col-12 col-sm-3 col-md-5">
+        <div class="row gx-0 profile" style="padding-top: 10px;">
+            <div class="col-5 col-md-7 col-lg-6 foto">
+                <div class="rare":style="{border: khodam.Rare === 'epic' ? '2px solid purple' : khodam.Rare === 'Common' ? '2px solid grey' : khodam.Rare === 'Uncommon' ? '2px solid green'  : khodam.Rare === 'Rare' ? '2px solid blue;': khodam.Rare === 'Legend' ? '2px solid gold': khodam.Rare === 'Special' ? '2px solid #91beff':'2px solid white',
+ backgroundColor: khodam.Rare === 'Epic' ? 'purple' : khodam.Rare === 'Common' ? 'grey' : khodam.Rare === 'Uncommon' ? 'green'  : khodam.Rare === 'Rare' ? 'blue;': khodam.Rare === 'Legend' ?'gold' : khodam.Rare === 'Special' ? '#91beff' : 'white'}">{{ khodam.Rare }}</div>
+                    <img style="max-width: 100%; height: auto;" v-bind:src="'assets/' + khodam.IkanId + '.png'" alt="Game HappyFish"></div>
+            <div class="col-1 col-md-0 col-lg-1 "></div>
+            <div class="col-6 col-md-12 col-lg-5 "><p class="name">halo <span class="user">{{khodam.User}}</span> kamu adalah <span class="ikan">{{ khodam.Ikan }}</span></p></div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-9 col-md-7 teks" ><p>{{ khodam.Teks }}</p></div>
+</div>
+
+</div>                 
+</div>
+            </div>
+
+        </div>
+    </div>
+<div class="bottom"><p></p></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+  const { createApp } = Vue
+  createApp({
+    data() {
+      return {
+        khodam:{User: "kapten",
+    Rare: '???',
+    IkanId: "happyfish",
+    Ikan: "....",
+    Teks: "tuliskan nama anda kapten",
+      }
+    }},
+methods:{
+getdata(){
+   
+    axios.get(`http://localhost:8080/ci/khodam/public/${this.name}`)
+    .then((res) => this.khodam=res.data)
+    .catch((error) => {
+        console.error('Error:', error.response ? error.response.data : error);
+    });
+
+},
+special(){alert("Special hanya terdapat pada 12 zodiak\nAries\nTaurus\nGemini\nCancer\nLeo\nVirgo\nLibra\nScorpio\nSagitarius\nCapricorn\nAquarius\nPisces");
+}}}).mount('.container')
+</script>
+</body>
+</html>

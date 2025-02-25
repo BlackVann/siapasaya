@@ -1,0 +1,141 @@
+body {
+    align-items: center;
+    background-color: rgb(0,127,255);
+    display: flex;
+    justify-content: center;
+  text-align: center;
+  }
+.special .share{ cursor: pointer;}
+  .special p, .share p{      background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    height: 90%;
+    padding: 4px 10px 4px;
+    background-color: #303245;
+    margin: 0;
+
+    margin-left: 5px;
+    font-family: "Chewy", serif;
+    color: rgb(255, 255, 255);
+    font-size: 18px; }
+ .parent{ display: flex;
+  justify-content: center; /* Center secara horizontal */
+  align-items: center; /* Center secara vertikal */
+padding-top: 5%;} 
+  .form {
+    
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    width: 320px;
+
+  }
+ 
+
+
+  .input {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+
+    font-size: 18px;
+    height: 90%;
+    outline: 0;
+    padding: 4px 20px 4px;
+    width: 100%;
+    font-family: "Chewy", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+  }
+   .submit {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 18px;
+    height: 80%;
+
+    outline: 0;
+    text-align: center;
+    width: 100%;
+    font-family: "Chewy", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+  }
+  
+  .submit:active {
+    background-color: #06b;
+  }
+.row1{margin-top: 10px;} 
+h1,p{
+    font-family: "Chewy", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+  }
+
+  ::placeholder {
+    color: white;
+  }
+  .rare {    font-family: "Chewy", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(4, 4, 4); position: absolute; bottom: 0;  padding: 0 5px 0 5px; margin: 0;right: 0; border-radius: 25px;  
+    }
+
+.foto{max-width: 115px;
+  position:relative;
+height: 115px;
+background-color: #15172b;}
+.form1{
+  --bs-gutter-x: 0;
+}
+.name{
+  text-align: left;
+  padding-top:0 ;
+} 
+p{font-size: 18px;}
+[v-cloak] {
+  display: none;
+}
+
+@media(min-width:576px){
+
+  .special p{height: 75%; margin-bottom: 5px; margin-left: 0; }
+
+  .share p{height: 75%;}  
+  .input{
+    height: 100%;
+  }
+  p{font-size: 16px;}
+  .foto{max-width: 150px;
+    height: 150px;}
+
+  .ic1{margin-top: 0;
+  margin-bottom: 10px;}
+  .submit{height: 100%;
+  margin-top: 0;}
+  .form{width: 2000px;
+  height: 330px;}
+  .parent{padding-top: 0;}
+  
+}
+
+.bottom{position: fixed; bottom: 0; z-index: -2; color: white;  width: 300vw; height: 20%;
+  background-color: rgb(228, 186, 1); 
+}
+.ikan, .user{color:rgb(228, 186, 1); }
+.profile{margin-bottom: 10px;}
+.teks{padding-top: 10px; color: white; text-align: left;}
+@media(min-width:992px){
+ .share p{height: 75%; }
+ .special p{margin-left: 5px;}
+  p{font-size: 20px;
+  }
+}
