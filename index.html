@@ -83,7 +83,7 @@
 methods:{
 getdata(){
    
-    axios.get(`http://localhost:8080/ci/khodam/public/${this.name}`)
+    axios.get(`http://siapa.wuaze.com/${this.name}`)
     .then((res) => {this.khodam=res.data;
         this.updateMetaTags();
      })
