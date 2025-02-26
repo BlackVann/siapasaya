@@ -14,6 +14,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIAPA SAYA?</title>
+    <meta property="og:title" content="Siapa saya ?">
+    <meta property="og:description" content="Saya adalah kapten">
+    <meta property="og:image"  content="https://blackvann.github.io/siapasaya/happyfish.png">
+
+    <meta property="og:url" content="https://blackvann.github.io/siapasaya/">
+    <meta property="og:type" content="website">
+
 </head>
 <body>
     <div class="container">
@@ -27,10 +34,10 @@
                         <div class="input-container ic1 col-6 col-sm-6 col-lg-4 col-xl-4">
                             <input aria-describedby="firstname" class="input form-control" type="text" v-model="name" placeholder="Name" pattern="[A-Za-z\s]+" maxlength="25" required/>
                         </div>
-                         <div @click="special" class="share col-6 col-sm-6 col-lg-4 col-xl-4">
-                            <p>SHARE</p>
+                         <div class="share col-6 col-sm-6 col-lg-4 col-xl-4"> <a href="https://wa.me/?text=https%3A%2F%2Fblackvann.github.io%2Fsiapasaya%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTEAAR1kbOzYz13QDOe2U-ZnFwrBkYqeL9somQmxy2McpkEQ5FB3HwlnyGwyffk_aem_YW0seHb79IHGlzCZTJ6Sww" target="_blank" rel="noopener">
+                            <p>SHARE</p></a>
                          </div>
-                         <div @click="special" class="special col-12 col-sm-12 col-lg-4 col-xl-4">
+                         <div target="_blank" class="special col-12 col-sm-12 col-lg-4 col-xl-4">
                             <p>SPECIAL</p>
                          </div>
                     <div class="col-12 col-sm-12 col-lg-12 col-xl-12"> 
@@ -77,12 +84,20 @@ methods:{
 getdata(){
    
     axios.get(`http://localhost:8080/ci/khodam/public/${this.name}`)
-    .then((res) => this.khodam=res.data)
+    .then((res) => {this.khodam=res.data;
+        this.updateMetaTags();
+     })
     .catch((error) => {
         console.error('Error:', error.response ? error.response.data : error);
     });
 
 },
+updateMetaTags() {
+
+        document.querySelector('meta[property="og:description"]').setAttribute("content", `Saya adalah ${this.khodam.User}`);
+        document.querySelector('meta[property="og:image"]').setAttribute("content", `https://blackvann.github.io/siapasaya/${this.khodam.IkanId}.png`);
+        document.querySelector('meta[property="og:url"]').setAttribute("content", "https://blackvann.github.io/siapasaya/");
+      },
 special(){alert("Special hanya terdapat pada 12 zodiak\nAries\nTaurus\nGemini\nCancer\nLeo\nVirgo\nLibra\nScorpio\nSagitarius\nCapricorn\nAquarius\nPisces");
 }}}).mount('.container')
 </script>
