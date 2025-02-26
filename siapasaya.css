@@ -5,6 +5,7 @@ body {
     justify-content: center;
   text-align: center;
   }
+a{text-decoration:none;}
 .special .share{ cursor: pointer;}
   .special p, .share p{      background-color: #303245;
     border-radius: 12px;
