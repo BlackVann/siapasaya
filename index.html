@@ -16,7 +16,7 @@
     <title>SIAPA SAYA?</title>
     <meta property="og:title" content="Siapa saya ?">
     <meta property="og:description" content="Saya adalah kapten">
-    <meta property="og:image"  content="https://blackvann.github.io/siapasaya/happyfish.png">
+    <meta property="og:image"  content="https://blackvann.github.io/siapasaya/assets/happyfish.png">
 
     <meta property="og:url" content="https://blackvann.github.io/siapasaya/">
     <meta property="og:type" content="website">
@@ -95,7 +95,7 @@ getdata(){
 updateMetaTags() {
 
         document.querySelector('meta[property="og:description"]').setAttribute("content", `Saya adalah ${this.khodam.User}`);
-        document.querySelector('meta[property="og:image"]').setAttribute("content", `https://blackvann.github.io/siapasaya/${this.khodam.IkanId}.png`);
+        document.querySelector('meta[property="og:image"]').setAttribute("content", `https://blackvann.github.io/siapasaya/assets/${this.khodam.IkanId}.png`);
         document.querySelector('meta[property="og:url"]').setAttribute("content", "https://blackvann.github.io/siapasaya/");
       },
 special(){alert("Special hanya terdapat pada 12 zodiak\nAries\nTaurus\nGemini\nCancer\nLeo\nVirgo\nLibra\nScorpio\nSagitarius\nCapricorn\nAquarius\nPisces");
