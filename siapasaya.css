@@ -22,7 +22,9 @@ body {
   justify-content: center; /* Center secara horizontal */
   align-items: center; /* Center secara vertikal */
 padding-top: 5%;} 
-  .form {
+.special p{margin-left: 0; }
+.special{margin-top: 5px; margin-bottom: 5px;}
+.form {
     
     background-color: #15172b;
     border-radius: 20px;
